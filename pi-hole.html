@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project | Pi-hole &amp; Unbound</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="project">
+
+  <nav class="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home | Resume</a></li>
+      <li><a href="pi-hole.html" aria-current="page">Project | Pi-hole &amp; Unbound</a></li>
+      <li><a href="print-server.html">Project | Wireless Print Server</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Network-Wide DNS Sinkhole (Pi-hole &amp; Unbound)</h1>
+      <p class="contact">Project write-up</p>
+    </div>
+  </header>
+
+  <main class="site-main" id="main">
+    <div class="content-inner">
+      <figure>
+        <img src="pihole-dashboard.png" alt="Screenshot of Pi-hole dashboard showing blocked queries">
+        <figcaption>The Pi-hole query log and dashboard monitoring local network traffic.</figcaption>
+      </figure>
+
+      <section id="equipment">
+        <h2>Equipment/Software Used</h2>
+        <ul>
+          <li>Raspberry Pi 4B</li>
+          <li>Pi-hole</li>
+          <li>Raspberry Pi Zero 2W (for backup DNS)</li>
+          <li>Nebula-Sync (for syncing two Raspberry Pi devices)</li>
+          <li>CAT 6 Ethernet Cable + Crimping Tools</li>
+        </ul>
+      </section>
+
+      <section id="description">
+        <h2>Project Description</h2>
+        <p>
+          This project involved setting up a Raspberry Pi 4B as a dedicated network security device. I installed Pi-hole to
+          act as a DNS sinkhole, blocking advertisements and tracking domains at the network level for all connected devices.
+          To increase privacy, I configured Unbound as a local, recursive DNS resolver, ensuring that DNS queries are resolved
+          directly through root servers rather than third-party providers. I set up the same service on another Raspberry Pi
+          Zero 2W device to serve as a backup DNS if the main Raspberry Pi 4B ever goes down. Using Nebula-Sync, I keep both
+          devices in sync so changes on one Pi reflect on the other.
+        </p>
+      </section>
+
+      <section id="skills-learned">
+        <h2>Skills Learned</h2>
+        <ul>
+          <li>Linux Administration: Installing and managing services via terminal.</li>
+          <li>Networking: Configuring static IP addresses and DHCP reservations.</li>
+          <li>DNS Security: Understanding the recursive resolution process and DNSSEC.</li>
+          <li>Privacy Hardening: Reducing the digital footprint of a local network.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

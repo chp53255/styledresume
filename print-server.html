@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project | Wireless Print Server</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="project">
+
+  <nav class="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home | Resume</a></li>
+      <li><a href="pi-hole.html">Project | Pi-hole &amp; Unbound</a></li>
+      <li><a href="print-server.html" aria-current="page">Project | Wireless Print Server</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Cross-Platform Wireless Print Server (CUPS &amp; Samba)</h1>
+      <p class="contact">Project write-up</p>
+    </div>
+  </header>
+
+  <main class="site-main" id="main">
+    <div class="content-inner">
+      <figure>
+        <img src="printer-setup.png" alt="Brother MFC-7340 connected to Raspberry Pi 4B">
+        <figcaption>The Brother MFC-7340 successfully integrated into the network via CUPS.</figcaption>
+      </figure>
+
+      <section id="equipment">
+        <h2>Equipment/Software Used</h2>
+        <ul>
+          <li>Raspberry Pi 4B (running Raspberry Pi OS Lite)</li>
+          <li>Brother MFC-7340 Laser Printer (USB interface)</li>
+          <li>Owl-Maintain brlaser Drivers</li>
+          <li>CUPS (Common Unix Printing System)</li>
+          <li>Samba (for Windows SMB protocol support)</li>
+          <li>Avahi-daemon (for iOS/AirPrint discovery)</li>
+        </ul>
+      </section>
+
+      <section id="description">
+        <h2>Project Description</h2>
+        <p>
+          This project focused on modernizing a legacy Brother MFC-7340 laser printer that lacked OEM wireless capabilities.
+          By connecting the printer via USB to a Raspberry Pi 4B, I configured CUPS to manage print spooling. Since Brother
+          does not offer updated drivers for modern applications in Linux, I used third-party drivers by Owl-Maintain. To ensure
+          the printer was accessible to Windows machines, I implemented Samba integration. Finally, I utilized Avahi to broadcast
+          the service across the network, enabling seamless AirPrint functionality for mobile devices and macOS without requiring
+          manual driver installations.
+        </p>
+      </section>
+
+      <section id="skills-learned">
+        <h2>Skills Learned</h2>
+        <ul>
+          <li>Service Integration: Coordinating CUPS and Samba to bridge Linux and Windows environments.</li>
+          <li>Legacy Hardware Support: Finding and installing specific Linux drivers for older peripherals.</li>
+          <li>mDNS &amp; Discovery: Implementing Avahi to enable zero-configuration networking (Zeroconf).</li>
+          <li>Protocol Management: Understanding the differences between IPP (Internet Printing Protocol) and SMB sharing.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
